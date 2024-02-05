@@ -10,6 +10,9 @@ class HomeScreen extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
+        const SizedBox(
+          height: 200,
+        ),
         const Image(
           image: AssetImage('assets/images/quiz-logo.png'),
           height: 200,
@@ -33,7 +36,19 @@ class HomeScreen extends StatelessWidget {
               textStyle: const TextStyle(fontSize: 15)),
           icon: const Icon(Icons.arrow_right_alt),
           label: const Text('Start Quiz'),
-        )
+        ),
+        const Spacer(),
+        const Text(
+          'Developed by Saurabh',
+          style: TextStyle(
+              color: Colors.white,
+              decoration: TextDecoration.underline,
+              decorationColor: Colors.white,
+              fontSize: 15),
+        ),
+        const SizedBox(
+          height: 50,
+        ),
       ],
     );
   }

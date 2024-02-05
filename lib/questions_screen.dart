@@ -35,9 +35,16 @@ class _QuestionsScreen extends State<QuestionsScreen> {
       child: Container(
         margin: const EdgeInsets.all(50),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            const SizedBox(
+              height: 100,
+            ),
+            const Image(image: AssetImage('assets/images/flutter.png')),
+            const SizedBox(
+              height: 80,
+            ),
             Text(
               currentQuestion.text,
               style: GoogleFonts.acme(
@@ -50,11 +57,14 @@ class _QuestionsScreen extends State<QuestionsScreen> {
               height: 30,
             ),
             ...currentQuestion.getShuffledAnswers().map((answer) {
-              return AnswerButton(
-                  answerText: answer,
-                  onTap: () {
-                    answerQuestion(answer);
-                  });
+              return Container(
+                padding: const EdgeInsets.all(5),
+                child: AnswerButton(
+                    answerText: answer,
+                    onTap: () {
+                      answerQuestion(answer);
+                    }),
+              );
             })
           ],
         ),
