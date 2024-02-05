@@ -28,6 +28,7 @@ class HomeScreen extends StatelessWidget {
         OutlinedButton.icon(
           onPressed: startQuiz,
           style: OutlinedButton.styleFrom(
+              side: BorderSide.none,
               foregroundColor: Colors.white,
               textStyle: const TextStyle(fontSize: 15)),
           icon: const Icon(Icons.arrow_right_alt),
